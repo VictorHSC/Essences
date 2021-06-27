@@ -3,8 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 
-const routes: Routes = [{ path: '', component: HomeComponent }];
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'categories', component: CategoriesComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,12 +1,15 @@
 <div class="container">
-  <h1 style="text-align: center">Home</h1>
+  <h1 style="text-align: center">Categorias</h1>
 
   <mat-accordion>
-    <mat-expansion-panel *ngFor="let incense of incenses | async" class="panel">
+    <mat-expansion-panel
+      *ngFor="let category of categories | async"
+      class="panel"
+    >
       <mat-expansion-panel-header>
         <mat-panel-title>
           <span class="panel__container" class="panel__title">
-            {{ incense.data.name }}
+            {{ category.data.name }}
           </span>
         </mat-panel-title>
       </mat-expansion-panel-header>
@@ -15,27 +18,19 @@
         <div class="form">
           <mat-form-field appearance="outline">
             <mat-label>Nome</mat-label>
-            <input matInput type="text" [(ngModel)]="incense.data.name" />
-          </mat-form-field>
-
-          <mat-form-field
-            *ngFor="let category of categories | async"
-            appearance="outline"
-          >
-            <mat-label> {{ category.data.name }}</mat-label>
-            <input
-              matInput
-              type="text"
-              [(ngModel)]="incense.data[category.id]"
-            />
+            <input matInput type="text" [(ngModel)]="category.data.name" />
           </mat-form-field>
 
           <div class="form__buttons">
-            <button mat-raised-button color="accent" (click)="delete(incense)">
+            <button mat-raised-button color="accent" (click)="delete(category)">
               Deletar
             </button>
 
-            <button mat-raised-button color="primary" (click)="update(incense)">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="update(category)"
+            >
               Atualizar
             </button>
           </div>

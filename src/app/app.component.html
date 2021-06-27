@@ -1,23 +1,25 @@
 <mat-sidenav-container class="sidenav-container">
   <!-- over, push or side-->
-  <mat-sidenav #sidenav class="sidenav" mode="push">
+  <mat-sidenav #sidenav class="sidenav" mode="over">
     <mat-list>
       <mat-list-item routerLink="/" (click)="sidenav.close()">
         <mat-icon matListIcon>home</mat-icon>
         <h3 matLine>Início</h3>
+      </mat-list-item>
+      <mat-list-item routerLink="/categories" (click)="sidenav.close()">
+        <mat-icon matListIcon>reorder</mat-icon>
+        <h3 matLine>Categorias</h3>
       </mat-list-item>
     </mat-list>
   </mat-sidenav>
 
   <mat-sidenav-content class="sidenav-content">
     <mat-toolbar class="toolbar" color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
-        (click)="sidenav.toggle()">
+      <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="spacer"></span>
-      <span>Essências</span>
-      <span class="spacer"></span>
+
+      <span>Incensos</span>
     </mat-toolbar>
 
     <router-outlet></router-outlet>
